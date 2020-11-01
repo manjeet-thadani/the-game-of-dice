@@ -1,4 +1,5 @@
 import { program } from "commander";
+import { start } from "./commands/start";
 import { CLI_NAME, VERSION, HELP_MESSAGE, RULES_MESSAGE } from "./constants";
 
 program
@@ -6,9 +7,7 @@ program
   .name(CLI_NAME)
   .command("start")
   .description("to start an new Game of Dice")
-  .action(() => {
-    // [TODO]
-  });
+  .action(start);
 
 program
   .command("rules")
