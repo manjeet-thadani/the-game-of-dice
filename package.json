@@ -6,8 +6,11 @@
   "main": "./dist/index.js",
   "scripts": {
     "build": "rm -rf dist && tsc",
-    "start": "npm run build && node ./dist/index.js start",
+    "start": "npm run build && ./bin/game start",
     "lint": "tslint --project tsconfig.json"
+  },
+  "bin": {
+    "dicegame": "./bin/game"
   },
   "dependencies": {
     "chalk": "^2.4.2",
