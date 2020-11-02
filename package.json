@@ -6,19 +6,53 @@
   "main": "./dist/index.js",
   "scripts": {
     "build": "rm -rf dist && tsc",
-    "start": "npm run build && node ./dist/index.js",
-    "lint": "tslint --project tsconfig.json"
+    "start": "npm run build && ./bin/game start",
+    "lint": "tslint --project tsconfig.json",
+    "test": "jest tests/.*test.ts"
+  },
+  "bin": {
+    "dicegame": "./bin/game"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "cli-table": "^0.3.1",
+    "commander": "^6.2.0",
+    "figlet": "^1.5.0",
+    "inquirer": "^5.2.0"
   },
   "devDependencies": {
+    "@types/cli-table": "^0.3.0",
+    "@types/figlet": "^1.2.1",
+    "@types/inquirer": "^7.3.1",
+    "@types/jest": "^23.3.14",
     "@types/node": "^14.14.6",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
     "eslint": "^7.0.0",
+    "jest": "^23.6.0",
     "prettier": "^1.18.2",
+    "ts-jest": "^22.4.6",
     "ts-node": "^7.0.1",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.3.0",
     "typescript": "^4.0.5"
+  },
+  "jest": {
+    "transform": {
+      "\\.ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "tests/.*test.ts",
+    "testPathIgnorePatterns": [
+      "dist/",
+      "node_modules/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
   }
 }
