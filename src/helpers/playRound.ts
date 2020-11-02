@@ -41,7 +41,6 @@ export const playRound = async (player: IPlayer, winPoints: number): Promise<voi
   if (player.totalScore >= winPoints) {
     player.hasWon = true;
 
-    console.log(chalk.green.bold(`Congratulations ${player.displayName}, You have completed this game`));
     return;
   }
 

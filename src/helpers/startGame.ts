@@ -1,3 +1,4 @@
+import chalk from "chalk";
 import { IPlayer } from "../interfaces/player";
 import { playRound } from "./playRound";
 import { printLeaderboard } from "./printLeaderboard";
@@ -41,6 +42,11 @@ export const startGame = async (players: IPlayer[], winPoints: number) => {
 
       if (player.hasWon) {
         player.rank = filterWinners(players).length;
+        console.log(
+          chalk.green.bold(
+            `Congratulations ${player.displayName}, You have completed this game and secured ${player.rank} rank`
+          )
+        );
       }
 
       printLeaderboard(players);
