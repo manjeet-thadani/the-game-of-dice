@@ -66,7 +66,7 @@ Example:
 ```bash
 $ ./bin/game --help
 
-Usage: dicegame [options] [command]
+Usage: ./bin/game [options] [command]
 
 Options:
   -V, --version   output the version number
@@ -77,7 +77,7 @@ Commands:
   rules           the rules of the game
   help [command]  display help for command
 
-Use "dicegame <command> --help" for more information about a given command.
+Use "./bin/game <command> --help" for more information about a given command.
 ```
 
 2. **rules**: CLI command to display basic rules of the game

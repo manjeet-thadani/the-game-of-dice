@@ -1,5 +1,5 @@
 export const GAME_NAME = "The Game of Dice";
-export const CLI_NAME = "dicegame";
+export const CLI_NAME = "./bin/game";
 export const VERSION = "0.0.1";
 
 export const HELP_MESSAGE = `\nUse "${CLI_NAME} <command> --help" for more information about a given command.`;
