@@ -46,7 +46,7 @@ export const playRound = async (player: IPlayer, winPoints: number): Promise<voi
 
   if (score === 6) {
     console.log(chalk.bold(`Well done ${player.displayName}! You get a chance to ROLL DICE AGAIN`));
-
+    player.lastScore = score;
     return playRound(player, winPoints);
   }
 
@@ -54,4 +54,6 @@ export const playRound = async (player: IPlayer, winPoints: number): Promise<voi
     player.skipTurn = true;
     console.log(chalk.bold(`Oh-Oh!, ${player.displayName} your turn would be skipped in next round`));
   }
+
+  player.lastScore = score;
 };
